@@ -1,13 +1,19 @@
 # PRI - Information Processing and Retrieval - FEUP 2023/24
 
 ## Project
-### Pipeline Diagram
 
-![Pipeline Diagram](doc/PRI_data_pipeline.jpg)
+### M1 Delivery
 
-### Conceptual Model
+- [M1 Report](doc/reports/M1_report.pdf)
+- [M1 Slides](doc/slides/M1_slides.pdf)
 
-![Conceptual Model](doc/PRI_conceptual_model.jpg)
+#### Pipeline Diagram
+
+![Pipeline Diagram](doc/diagrams/PRI_data_pipeline.jpg)
+
+#### Conceptual Model
+
+![Conceptual Model](doc/diagrams/PRI_conceptual_model.jpg)
 
 
 ## Project developed by:
