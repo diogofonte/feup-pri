@@ -1,0 +1,127 @@
+{
+	"add-field-type": [
+        {
+            "name":"char_text",
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "charFilter":{
+                    "class":"solr.MappingCharFilterFactory", "mapping":"mapping_accents.txt"
+                },
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            }
+        },
+        {
+            "name": "date",
+            "class": "solr.TrieDateField",
+            "precisionStep": 6
+        },
+        {
+            "name":"synonym_text",
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms":"synonyms.txt"},
+                    {"class":"solr.PorterStemFilterFactory"}
+                ]
+            }
+        },
+        {
+            "name":"content_text",
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms":"synonyms.txt"},
+                    {"class":"solr.PorterStemFilterFactory"},
+                    {"class":"solr.EnglishPossessiveFilterFactory"},
+                    {"class":"solr.HyphenatedWordsFilterFactory"},
+                    {"class": "solr.StopFilterFactory", "ignoreCase": true}
+                ]
+            }
+        }
+    ],
+    "add-field": [
+        {
+            "name": "Title",
+            "type": "synonym_text",
+            "indexed": true
+        },
+        {
+            "name": "Author",
+            "type": "char_text",
+            "indexed": true
+        },
+        {
+            "name": "Date",
+            "type": "date",
+            "indexed": true
+        },
+        {
+            "name": "Content",
+            "type": "content_text",
+            "indexed": true
+        },
+        {
+            "name": "Publisher",
+            "type": "char_text",
+            "multiValued": true, 
+            "indexed": true
+        },
+        {
+            "name": "Source",
+            "type": "char_text",
+            "multiValued": true, 
+            "indexed": true
+        },
+        {
+            "name": "Category",
+            "type": "synonym_text",
+            "multiValued": true, 
+            "indexed": true
+        }
+    ]
+}
