@@ -1,3 +1,5 @@
 .DS_Store
-/data
+/data/all-the-news
+/data/bbc_news_collection
+/solr/news.json
 *.csv

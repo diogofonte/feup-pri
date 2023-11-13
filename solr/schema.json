@@ -82,9 +82,21 @@
                     {"class": "solr.StopFilterFactory", "ignoreCase": true}
                 ]
             }
+        },
+        {
+            "name":"code_id",
+            "class":"solr.StrField",
+            "sortMissingLast":"true"
         }
     ],
     "add-field": [
+        {
+            "name": "code",
+            "type": "code_id",
+            "indexed": true,
+            "stored": true,
+            "required": true
+        },
         {
             "name": "title",
             "type": "synonym_text",
