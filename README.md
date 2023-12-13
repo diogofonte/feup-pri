@@ -16,6 +16,12 @@
 ![Conceptual Model](doc/diagrams/PRI_conceptual_model.jpg)
 
 
+### M2 Delivery
+
+- [M2 Report](doc/reports/M2_report.pdf)
+- [M2 Slides](doc/slides/M2_slides.pdf)
+
+
 ## Project developed by:
 - Diogo Fonte - up202004175
 - Rodrigo Figueiredo - up202005216
