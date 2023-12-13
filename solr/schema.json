@@ -87,6 +87,15 @@
             "name":"code_id",
             "class":"solr.StrField",
             "sortMissingLast":"true"
+        },
+        {
+            "name":"knn_vector",
+            "class":"solr.DenseVectorField", 
+            "vectorDimension":"384", 
+            "similarityFunction":"cosine",
+            "knnAlgorithm":"hnsw",
+            "hnswMaxConnections":"10",
+            "hnswBeamWidth":"40"
         }
     ],
     "add-field": [
@@ -134,6 +143,12 @@
             "type": "synonym_text",
             "multiValued": true, 
             "indexed": true
+        },
+        {
+            "name": "bert_vector",
+            "type": "knn_vector",
+            "indexed": true,
+            "stored": true
         }
     ]
 }
