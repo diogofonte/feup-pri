@@ -145,7 +145,7 @@
             "indexed": true
         },
         {
-            "name": "bert_vector",
+            "name": "vector",
             "type": "knn_vector",
             "indexed": true,
             "stored": true
