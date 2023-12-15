@@ -22,6 +22,12 @@
 - [M2 Slides](doc/slides/M2_slides.pdf)
 
 
+### M3 Delivery
+
+- [M3 Report](doc/reports/M3_report.pdf)
+- [M3 Slides](doc/slides/M3_slides.pdf)
+
+
 ## Project developed by:
 - Diogo Fonte - up202004175
 - Rodrigo Figueiredo - up202005216
