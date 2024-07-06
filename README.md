@@ -1,4 +1,4 @@
-# PRI - Information Processing and Retrieval - FEUP 2023/24
+# PRI - Information Processing and Retrieval - M.EIC FEUP 2023/24
 
 ## Project
 
